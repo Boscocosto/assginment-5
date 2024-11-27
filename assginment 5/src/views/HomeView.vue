@@ -3,20 +3,23 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <div class="header">
-        <div class="logo">
-            <img src="../assets/Movie.png" class="logo">
-            <h1>Pop Movies</h1>
+    <div>
+        <div class="header">
+            <div class="logo">
+                <img src="/src/assets/movie.png" class="logo"/>
+                <h1>Pop Movies</h1>
+            </div>
+            <div class="buttons">
+                <RouterLink to="/register" class="button register">Register</RouterLink>
+                <RouterLink to="/login" class="button login">Login</RouterLink>
+            </div>
+        </div>    
+
+        <div class="hero">
+            <h1>Welcome to Pop Movies</h1>
+            <p>A place where you can watch all your favorite movies for free in one place</p>
+            <button type="button">Explore Now</button>
         </div>
-        <div class="button">
-            <RouterLink to="/register" class="button register">Register</RouterLink>
-            <RouterLink to="/login" class="button login">Login</RouterLink>
-        </div>
-    </div>    
-    <div class="hero">
-        <h1>Welcome to Pop Movies</h1>
-        <p>A place where you can watch all your favorite movies for free in one place</p>
-        <button type="button">Explore Now</button>
     </div>
 </template>
 
@@ -50,12 +53,12 @@ body {
     margin-right: 10px;
 }
 
-.button {
+.buttons {
     display: flex;
     gap: 10px;
 }
 
-.button .register, .button .login {
+.button {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -65,21 +68,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.button .register:hover, .button .login:hover {
-    background-color: #0000008d;
-}
-
-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #000000;
-    color: white;
-    transition: background-color 0.3s;
-}
-
-button:hover {
+.button:hover {
     background-color: #0000008d;
 }
 
@@ -90,5 +79,9 @@ button:hover {
     color: black;
     text-align: center;
     padding: 100px 20px;
+}
+
+footer {
+    text-align: center;
 }
 </style>
