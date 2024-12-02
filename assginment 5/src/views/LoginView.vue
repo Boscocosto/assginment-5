@@ -6,7 +6,7 @@ const router = useRouter();
 const password = ref('');
 
 const handleLogin = () => {
-  if (password.value === "iloveyou") {
+  if (password.value === "password") {
     router.push("/movies");
   } else {
     alert("Invalid Password");
@@ -43,6 +43,7 @@ const handleLogin = () => {
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 80;
 }
 
 .overlay {

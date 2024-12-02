@@ -26,7 +26,7 @@ const genresList = [
 </script>
 
 <template>
-  <Genres :genres="genresList" />
+<Genres :genres="genresList" />  
 </template>
 
 <style scoped>
