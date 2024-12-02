@@ -6,7 +6,7 @@ import { RouterLink } from 'vue-router';
     <div>
         <div class="header">
             <div class="logo">
-                <img src="/src/assets/movie.png" class="logo"/>
+                <img src="/movie.png" class="logo"/>
                 <h1>Pop Movies</h1>
             </div>
             <div class="buttons">
@@ -18,13 +18,6 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-body {
-    background-image: url('popcorn.jpg');
-    background-size: cover;
-    background-position: center top;
-    margin: 0;
-}
-
 .header {
     display: flex;
     justify-content: space-between;

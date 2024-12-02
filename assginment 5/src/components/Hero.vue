@@ -12,15 +12,8 @@
 </template>
 
 <style scoped>
-body {
-    background-image: url('popcorn.jpg');
-    background-size: cover;
-    background-position: center top;
-    margin: 0;
-}
-
 .hero {
-    background-image: url('hero-background.jpg');
+    background-image: url('/popcorn.jpg');
     background-size: cover;
     background-position: center;
     color: black;

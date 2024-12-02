@@ -8,13 +8,6 @@
 </template>
 
 <style scoped>
-body {
-    background-image: url('popcorn.jpg');
-    background-size: cover;
-    background-position: center top;
-    margin: 0;
-}
-
 footer {
     text-align: center;
 }
