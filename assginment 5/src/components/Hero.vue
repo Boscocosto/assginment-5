@@ -13,11 +13,7 @@
 
 <style scoped>
 .hero {
-    background-image: url('/popcorn.jpg');
-    background-size: cover;
-    background-position: center;
     color: black;
     text-align: center;
-    padding: 100px 20px;
 }
 </style>

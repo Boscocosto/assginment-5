@@ -8,8 +8,16 @@ const router = useRouter();
 const selectedGenre = ref(28);
 const response = ref(null);
 
+const genres = [ 
+  { id: 12, genreName: 'Adventure' },
+  {id: 16, genreName: 'Animation' },
+  {id: 35, genreName: 'Comedy' },
+  {id: 10402, genreName: 'Music' },
+  {id: 878, genreName: 'Sci-Fi' },
+];
+
 async function getMovieByGenre() {
-  response.value = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=${selectedGenre.value}`);
+  response.value = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&include_adult=false&with_genres=${selectedGenre.value}`);
 }
 
 function getMovieDetails(id) {
@@ -17,7 +25,7 @@ function getMovieDetails(id) {
 }
 
 onMounted(async () => {
-  response.value = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&with_genres=${selectedGenre.value}`);
+  response.value = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&include_adult=false&with_genres=${selectedGenre.value}`);
 })
 </script>
 
@@ -37,61 +45,45 @@ onMounted(async () => {
 
 <style scoped>
 .movie-gallery {
-  padding: 20px;
-  color: white;
-  background-color: #141414;
+  text-align: center;
 }
 
-.movie-gallery h1 {
-  text-align: center;
+select {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1.1rem;
   margin-bottom: 20px;
-  font-size: 2.5rem;
 }
 
 .movie-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
 }
 
 .movie-card {
-  background-color: #222;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.2s;
   width: 200px;
+  margin: 15px;
+  cursor: pointer;
 }
 
-.movie-card:hover {
-  transform: scale(1.05);
+.movie-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .movie-poster {
   width: 100%;
-  height: auto;
-}
-
-.movie-title {
-  padding: 10px;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #e50914;
-}
-
-select {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  border: 2px solid #444;
   border-radius: 5px;
-  font-size: 1rem;
-  width: 200px;
-  margin: 10px 0;
 }
 
-select:focus {
-  border-color: #e50914;
-  outline: none;
+.movie-card:hover .movie-poster {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-title {
+  color: hotpink;
 }
 </style>

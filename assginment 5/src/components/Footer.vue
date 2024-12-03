@@ -9,6 +9,9 @@
 
 <style scoped>
 footer {
+    display: flex;
     text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 </style>

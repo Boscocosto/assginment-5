@@ -6,17 +6,26 @@ import Feature from '../components/Feature.vue';
 </script>
 
 <template>
-    <Header />
+  <Header />  
+  <div class="homePage">
     <Hero />
-    <Feature/>
-    <Footer />
+    <Feature />
+  </div>
+  <Footer />
 </template>
 
 <style scoped>
-body {
-    background-image: url('popcorn.jpg');
+.homePage {
+    background-image: url('/popcorn.jpg');
     background-size: cover;
-    background-position: center top;
-    margin: 0;
+    background-position: center;
+    color: black;
+    text-align: center;
+    padding: 100px 20px;
+    height: 100vh; /* Ensures the hero section takes up the entire viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers the content */
+    align-items: center; /* Horizontally centers the content */
 }
 </style>
