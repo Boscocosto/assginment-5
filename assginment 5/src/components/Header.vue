@@ -3,17 +3,15 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <div>
-        <div class="header">
-            <div class="logo">
-                <img src="/movie.png" class="logo"/>
-                <h1>Pop Movies</h1>
-            </div>
-            <div class="buttons">
+    <div class="header">
+        <div class="logo">
+            <img src="/movie.png" class="logo"/>
+            <h1>Pop Movies</h1>
+        </div>
+        <div class="buttons">
                 <RouterLink to="/register" class="button register">Register</RouterLink>
                 <RouterLink to="/login" class="button login">Login</RouterLink>
-            </div>
-        </div>    
+        </div>
     </div>
 </template>
 

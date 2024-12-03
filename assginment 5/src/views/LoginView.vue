@@ -15,13 +15,16 @@ const handleLogin = () => {
 </script>
 
 <template>
-  <div class="hero">
-    <div class="overlay">
-      <div class="navbar">
-        <h1>MyFlix</h1>
-        <RouterLink to="/register" class="button register">Register</RouterLink>
-      </div>
-      <div class="form-container">
+  <div class="header">
+    <div class="logo">
+      <img src="/movie.png" class="logo"/>
+      <h1>Pop Movies</h1>
+    </div>
+    <div class="buttons">
+      <RouterLink to="/register" class="button register">Register</RouterLink>
+    </div>
+  </div>
+  <div class="login">
         <h2>Login to Your Account</h2>
         <form @submit.prevent="handleLogin">
           <input type="email" placeholder="Email" class="input-field" required />
@@ -29,116 +32,98 @@ const handleLogin = () => {
           <button type="submit" class="button login">Login</button>
         </form>
       </div>
-    </div>
-  </div>
 </template>
 
 <style scoped>
-.hero {
-  background-image: url('https://source.unsplash.com/random/1920x1080/?movie');
-  /* Replace with your desired background */
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 80;
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
 }
 
-.overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  padding: 20px;
-  /* Added padding for better spacing */
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+.logo img {
+    height: 50px;
+    margin-right: 10px;
 }
 
-.navbar h1 {
-  font-size: 2rem;
+.buttons {
+    display: flex;
+    gap: 10px;
 }
 
-.navbar .register {
-  background-color: #e50914;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #000000;
+    color: white;
+    transition: background-color 0.3s;
 }
 
-.navbar .register:hover {
-  background-color: #f40612;
+.button:hover {
+    background-color: #0000008d;
 }
 
-.form-container {
-  text-align: center;
-  margin-top: 50px;
-  /* Adjusts spacing from the top */
+/* Login Section Styles */
+.login {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.form-container h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.login h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
 }
 
 .input-field {
-  padding: 15px;
-  /* Increased padding for better touch targets */
-  width: 300px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  /* Added a border */
-  margin-bottom: 15px;
-  transition: border-color 0.3s;
+    flex: 1 1 45%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
 .input-field:focus {
-  border-color: #e50914;
-  /* Change border color on focus */
-  outline: none;
-  /* Remove default outline */
+    border-color: #000;
+    outline: none;
 }
 
-.login {
-  background-color: #e50914;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  /* Added transform for hover effect */
+.button.login {
+    flex: 1 1 45%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.login:hover {
-  background-color: #f40612;
-  transform: scale(1.05);
-  /* Slightly scale up on hover */
-}
-
-@media (max-width: 600px) {
-  .input-field {
-    width: 90%;
-    /* Make input fields responsive */
-  }
-
-  .navbar h1 {
-    font-size: 1.5rem;
-    /* Reduce font size on smaller screens */
-  }
+.button.login:hover {
+    background-color: #000;
 }
 </style>
