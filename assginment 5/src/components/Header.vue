@@ -5,12 +5,12 @@ import { RouterLink } from 'vue-router';
 <template>
     <div class="header">
         <div class="logo">
-            <img src="/movie.png" class="logo"/>
+            <img src="/movie.png" class="logo" />
             <h1>Pop Movies</h1>
         </div>
         <div class="buttons">
-                <RouterLink to="/register" class="button register">Register</RouterLink>
-                <RouterLink to="/login" class="button login">Login</RouterLink>
+            <RouterLink to="/register" class="button register">Register</RouterLink>
+            <RouterLink to="/login" class="button login">Login</RouterLink>
         </div>
     </div>
 </template>

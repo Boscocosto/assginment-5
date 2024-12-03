@@ -6,7 +6,7 @@ import Feature from '../components/Feature.vue';
 </script>
 
 <template>
-  <Header />  
+  <Header />
   <div class="homePage">
     <Hero />
     <Feature />
@@ -16,8 +16,8 @@ import Feature from '../components/Feature.vue';
 
 <style scoped>
 .homePage {
-    background-image: url('/popcorn.jpg');
-    background-size: cover;
-    background-position: center;
+  background-image: url('/popcorn.jpg');
+  background-size: cover;
+  background-position: center;
 }
 </style>

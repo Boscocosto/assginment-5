@@ -8,12 +8,12 @@ const router = useRouter();
 const selectedGenre = ref(28);
 const response = ref(null);
 
-const genres = [ 
+const genres = [
   { id: 12, genreName: 'Adventure' },
-  {id: 16, genreName: 'Animation' },
-  {id: 35, genreName: 'Comedy' },
-  {id: 10402, genreName: 'Music' },
-  {id: 878, genreName: 'Sci-Fi' },
+  { id: 16, genreName: 'Animation' },
+  { id: 35, genreName: 'Comedy' },
+  { id: 10402, genreName: 'Music' },
+  { id: 878, genreName: 'Sci-Fi' },
 ];
 
 async function getMovieByGenre() {
@@ -44,46 +44,101 @@ onMounted(async () => {
 </template>
 
 <style scoped>
+/* Movie Gallery Container */
 .movie-gallery {
-  text-align: center;
-}
-
-select {
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-}
-
-.movie-list {
+  padding: 20px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #f4f4f4;
+  /* Light background for the whole gallery */
+  min-height: 100vh;
 }
 
-.movie-card {
-  width: 200px;
-  margin: 15px;
+/* Genre Selection Dropdown */
+select {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
   cursor: pointer;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
 }
 
-.movie-title {
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 10px;
+select:focus {
+  border-color: #007bff;
+  /* Highlighted border on focus */
 }
 
+/* Movie List Container */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* Flexible grid */
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  /* Max width for better alignment */
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+/* Individual Movie Card */
+.movie-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  /* Zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* Enhanced shadow */
+}
+
+/* Movie Poster Image */
 .movie-poster {
   width: 100%;
-  border-radius: 5px;
+  height: 300px;
+  /* Set a fixed height for uniformity */
+  object-fit: cover;
+  /* Ensure images cover the area without distortion */
+  border-bottom: 3px solid #f4f4f4;
+  /* Optional border between the image and title */
 }
 
-.movie-card:hover .movie-poster {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
+/* Movie Title */
+.movie-title {
+  font-size: 18px;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  color: #333;
+  background-color: #f9f9f9;
+  margin: 0;
+  border-top: 1px solid #ccc;
 }
 
-.movie-card:hover .movie-title {
-  color: hotpink;
+/* Responsive Design */
+@media (max-width: 768px) {
+  .movie-gallery {
+    padding: 10px;
+  }
+
+  .select {
+    width: 200px;
+  }
+
+  .movie-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    /* Adjust for smaller screens */
+  }
 }
 </style>
