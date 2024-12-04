@@ -7,26 +7,30 @@
       <h1>Pop Movies</h1>
     </div>
     <div class="buttons">
-      <RouterLink to="/login" class="button register">Log in</RouterLink>
+      <RouterLink to="/login" class="button">Log in</RouterLink>
     </div>
   </div>
-  <div class="login">
-    <h2>Create an Account</h2>
-    <form>
+  <div class="register">
+    <div class="registerText">
+      <h2>Create an Account</h2>
+      <form>
       <input type="text" placeholder="Name" class="input-field" required>
       <input type="email" placeholder="Email" class="input-field" required>
       <input type="password" placeholder="Password" class="input-field" required>
       <input type="password" placeholder="Re-Enter Password" class="input-field" required>
-      <button type="submit" class="button register">Register</button>
+      <button type="submit" class="button">Register</button>
     </form>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.body{
-  background-image: url('/popcorn.jpg');
-  background-size: cover;
-  background-position: center;
+.registerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 .header {
   display: flex;
@@ -69,20 +73,20 @@
   background-color: #0000008d;
 }
 
-.login {
-  margin: 0 auto;
-  padding: 20px;
-  max-width: 1200px;
-  margin-top: 10%;
+.register {
   text-align: center;
+  background-image: url('/popcorn.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
-.login h2 {
+.register h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.login-form {
+.register-form {
   display: flex;
   justify-content: space-between;
   gap: 10px;

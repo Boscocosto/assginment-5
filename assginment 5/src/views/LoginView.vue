@@ -25,16 +25,25 @@ const handleLogin = () => {
     </div>
   </div>
   <div class="login">
-    <h2>Login to Your Account</h2>
-    <form @submit.prevent="handleLogin">
-      <input type="email" placeholder="Email" class="input-field" required />
-      <input v-model:="password" type="password" placeholder="Password" class="input-field" required />
-      <button type="submit" class="button login">Login</button>
-    </form>
+    <div class="loginText">
+      <h2>Login to Your Account</h2>
+      <form @submit.prevent="handleLogin">
+        <input type="email" placeholder="Email" class="input-field" required />
+        <input v-model:="password" type="password" placeholder="Password" class="input-field" required />
+        <button type="submit" class="button">Login</button>
+      </form>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.loginText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -77,12 +86,11 @@ const handleLogin = () => {
 }
 
 .login {
-  margin: 0 auto;
-  padding: 20px;
-  left: 10%;
   text-align: center;
-  max-width: 600px;
-  margin-top: 10%;
+  background-image: url('/popcorn.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 .login h2 {
