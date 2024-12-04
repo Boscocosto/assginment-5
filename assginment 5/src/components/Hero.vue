@@ -15,5 +15,20 @@
 .hero {
     color: black;
     text-align: center;
+    padding: 50px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    background-color: white;
+    display: inline-block;
+}
+
+.hero p {
+    font-size: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    display: block;
 }
 </style>
