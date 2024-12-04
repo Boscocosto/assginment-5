@@ -82,7 +82,7 @@ const handleLogin = () => {
   left: 10%;
   text-align: center;
   max-width: 600px;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 .login h2 {

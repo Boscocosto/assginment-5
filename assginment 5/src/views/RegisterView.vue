@@ -16,12 +16,18 @@
       <input type="text" placeholder="Name" class="input-field" required>
       <input type="email" placeholder="Email" class="input-field" required>
       <input type="password" placeholder="Password" class="input-field" required>
+      <input type="password" placeholder="Re-Enter Password" class="input-field" required>
       <button type="submit" class="button register">Register</button>
     </form>
   </div>
 </template>
 
 <style scoped>
+.body{
+  background-image: url('/popcorn.jpg');
+  background-size: cover;
+  background-position: center;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -63,14 +69,11 @@
   background-color: #0000008d;
 }
 
-/* Login Section Styles */
 .login {
   margin: 0 auto;
   padding: 20px;
-  max-width: 900px;
-  /* Increase the width to allow space for the row */
+  max-width: 1200px;
   margin-top: 10%;
-  /* Adjust the margin-top to move the form down */
   text-align: center;
 }
 
@@ -79,21 +82,15 @@
   margin-bottom: 20px;
 }
 
-/* Form Styles to fit inputs and button in one line */
 .login-form {
   display: flex;
-  /* Align all child elements in a row */
   justify-content: space-between;
-  /* Distribute space between items */
   gap: 10px;
-  /* Space between the form elements */
   flex-wrap: nowrap;
-  /* Prevent wrapping, all elements stay in a row */
 }
 
 .input-field {
   flex: 1 1 22%;
-  /* Make each input take up 22% of the width to fit 4 items */
   padding: 12px;
   margin: 10px 0;
   border-radius: 5px;
@@ -109,7 +106,6 @@
 
 .button.register {
   flex: 1 1 22%;
-  /* Make the button take up 22% of the width, same as inputs */
   padding: 12px;
   background-color: #333;
   color: white;
