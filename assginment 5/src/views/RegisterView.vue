@@ -14,12 +14,12 @@
     <div class="registerText">
       <h2>Create an Account</h2>
       <form>
-      <input type="text" placeholder="Name" class="input-field" required>
-      <input type="email" placeholder="Email" class="input-field" required>
-      <input type="password" placeholder="Password" class="input-field" required>
-      <input type="password" placeholder="Re-Enter Password" class="input-field" required>
-      <button type="submit" class="button">Register</button>
-    </form>
+        <input type="text" placeholder="Name" class="input-field" required>
+        <input type="email" placeholder="Email" class="input-field" required>
+        <input type="password" placeholder="Password" class="input-field" required>
+        <input type="password" placeholder="Re-Enter Password" class="input-field" required>
+        <button type="submit" class="button">Register</button>
+      </form>
     </div>
   </div>
 </template>
@@ -32,6 +32,7 @@
   align-items: center;
   height: 100vh;
 }
+
 .header {
   display: flex;
   justify-content: space-between;

@@ -8,15 +8,6 @@ const router = useRouter();
 const selectedGenre = ref(28);
 const response = ref(null);
 
-const genres = [
-  { id: 12, genreName: 'Adventure' },
-  { id: 53, genreName: 'Thriller' },
-  { id: 16, genreName: 'Animation' },
-  { id: 9648, genreName: 'Mystery' },
-  { id: 27, genreName: 'Horror' },
-  { id: 28, genreName: 'Action' },
-];
-
 async function getMovieByGenre() {
   response.value = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}&include_adult=false&with_genres=${selectedGenre.value}`);
 }
