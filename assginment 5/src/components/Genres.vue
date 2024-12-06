@@ -57,7 +57,7 @@ select {
   cursor: pointer;
   background-color: #fff;
   transition: border-color 0.3s ease;
-  align-self: flex-end; 
+  align-self: flex-end;
 }
 
 .movie-list {

@@ -1,10 +1,15 @@
 <script setup>
 import axios from "axios";
+import { onMounted } from 'vue';
 import { useRoute } from "vue-router";
 
 const route = useRoute();
 const response = await axios.get(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=${import.meta.env.VITE_API_KEY}&append_to_response=videos`);
 console.log(response.data);
+
+onMounted(async () => {
+  response.value = await axios.get(`https://api.themoviedb.org/3/movie/${route.params.id}?api_key=${import.meta.env.VITE_API_KEY}&append_to_response=videos`);
+})
 </script>
 
 <template>
